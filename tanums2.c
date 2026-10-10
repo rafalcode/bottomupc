@@ -8,21 +8,21 @@
 
 int main(void)
 {
-    double t, told=0, sub;
+    double curr, prev=0, sub;
     int coun=0;
 
-    printf("\n"); 
-    while (scanf("%lf", &t) == 1) {
+    printf("Here we take the numbers piped in and calculate the substraction of the previous from the current one.\n"); 
+    while (scanf("%lf", &curr) == 1) {
         coun++;
         if(coun==1) {
-            told=t;
+            prev=curr;
             continue;
         }
-        sub = t-told;
+        sub = curr - prev;
         printf("%4.4f\n", sub);
-        told=t;
+        prev=curr;
     }
-    printf("%i numbers were output.\n", coun);
+    printf("%i subtractions were output.\n", coun-1);
 
     return 0;
 }
